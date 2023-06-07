@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes')
+const cors = require('cors')
 
 // env config
 if (process.env.NODE_ENV !== 'production') {
@@ -19,6 +20,7 @@ mongoose.connect(dbUrl).then(() => {
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const PORT = 4000;
 
 app.use('/api', routes);
