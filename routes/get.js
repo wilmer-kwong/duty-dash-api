@@ -19,7 +19,7 @@ const getPlayerData = async (req, res) => {
 }
 
 const getPlayerDataByUserId = async (req, res) => {
-    await Model.find({ 'playerId': req.params.playerId })
+    await Model.findOne({ 'playerId': req.params.playerId })
         .then((data) => {
             res.json(data);
         }).catch((err) => {
