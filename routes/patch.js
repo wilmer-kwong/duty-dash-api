@@ -1,7 +1,7 @@
 const Model = require('../model')
 
 const updatePlayerDataFields = async (req, res) => {
-    const id = req.params.id;
+    const id = { '_id': req.params.id };
     let newData = req.body;
     const options = { new: true };
 
